@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h3>The elements.</h3>
+    <form action="/action_page.php">
+        <label for="Address">First name:</label><br>
+        <input type="text" id="Address" name="Address"><br><br>
+        <input type="submit" value="Submit"><br>
+    </form>
+
+    <h3>Select Elements</h3>
+    <form action="/action_page.php">
+        <p>Select the domain in which you have your interest to complete our Engineering</p>
+        <label for="Engineer">Choose a Domain:</label>
+        <select id="Engineer" name="Engineer">
+            <option value="C.TECH">C.TECH</option>
+            <option value="CSE">CSE</option>
+            <option value="ETC">ETC</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="MECHANICAL">MECHANICAL</option>
+        </select><br><br>
+        <input type="submit"><br>
+    </form>
+
+    <h3>Allow Multiple Selection</h3>
+    <p>The multiple selection attribute allows the user to select more than one domain.</p>
+    <form action="/action_page.php">
+        <label for="Engineering">Choose a Domain:</label>
+        <select id="Engineer" name="Engineer" size="5" multiple>
+            <option value="C.TECH">C.TECH</option>
+            <option value="CSE">CSE</option>
+            <option value="ETC">ETC</option>
+            <option value="CIVIL">CIVIL</option>
+            <option value="MECHANICAL">MECHANICAL</option>
+        </select><br><br>
+        <input type="submit"><br>
+    </form>
+
+    <h3>Feedback area</h3>
+    <p>What you are facing the problem please share with us.</p>
+    <form action="/action_page.php">
+        <textarea name="message" rows="8" cols="30">While doing admission it was very good to interaction.</textarea><br>
+        <input type="submit"><br>
+    </form>
+
+    <h3>The button elements</h3>
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button><br>
+
+    <h3>Grouping data with fieldset</h3>
+    <form action="/action_page.php">
+        <fieldset>
+            <legend>Personal information:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="Sachi"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Sathe"><br>
+            <input type="submit" value="Submit"><br>
+        </fieldset>
+    </form>
+
+</body>
+</html>
