@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admission Registration</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let dob = document.getElementById("dob").value;
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let courses = document.getElementsByName("course");
+            let valid = true;
+            let msg = "";
+
+            // 1. Validate Name
+            if (!/^[A-Za-z ]{6,}$/.test(name)) {
+                msg += "Name must contain only alphabets and be at least 6 characters long.\n";
+                valid = false;
+            }
+
+            // 2. Validate Date of Birth (Age > 17)
+            let birthDate = new Date(dob);
+            let today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            if (isNaN(birthDate.getTime()) || age < 18) {
+                msg += "Invalid Date of Birth or age must be 18 or above.\n";
+                valid = false;
+            }
+
+            // 3. Validate Email
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                msg += "Invalid Email ID.\n";
+                valid = false;
+            }
+
+            // 4. Validate Mobile Number
+            if (!/^\d{10}$/.test(mobile)) {
+                msg += "Mobile number must contain exactly 10 digits.\n";
+                valid = false;
+            }
+
+            // 5. Validate Course Selection
+            let courseSelected = false;
+            for (let c of courses) {
+                if (c.checked) {
+                    courseSelected = true;
+                    break;
+                }
+            }
+            if (!courseSelected) {
+                msg += "Please select at least one course.\n";
+                valid = false;
+            }
+
+            // Final result
+            if (!valid) {
+                alert(msg);
+            } else {
+                alert("Form submitted successfully!");
+            }
+
+            return valid; // Prevents form submission if invalid
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Admission Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <label>Student Name:</label><br>
+        <input type="text" id="name"><br><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" id="dob"><br><br>
+
+        <label>Email ID:</label><br>
+        <input type="text" id="email"><br><br>
+
+        <label>Mobile Number:</label><br>
+        <input type="text" id="mobile"><br><br>
+
+        <label>Course Selection:</label><br>
+        <input type="checkbox" name="course" value="BCA"> BCA<br>
+        <input type="checkbox" name="course" value="BBA"> BBA<br>
+        <input type="checkbox" name="course" value="BSc"> BSc<br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
