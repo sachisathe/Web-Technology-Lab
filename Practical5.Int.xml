@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE employees 
+[
+    <!ELEMENT employees (employee+)>
+    <!ELEMENT employee (id, name, department, designation, email, salary)>
+    <!ELEMENT id (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT department (#PCDATA)>
+    <!ELEMENT designation (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+    <!ELEMENT salary (#PCDATA)>
+]>
+<employees>
+    <employee>
+        <id>101</id>
+        <name>Sachi Sathe</name>
+        <department>Compurt Technology</department>
+        <designation>Software Engineer</designation>
+        <email>sachi@example.com</email>
+        <salary>50000</salary>
+    </employee>
+
+    <employee>
+        <id>102</id>
+        <name>Priyanka Lichade</name>
+        <department>Computer Science Engineering</department>
+        <designation>Software Engineer</designation>
+        <email>priyanka@example.com</email>
+        <salary>60000</salary>
+    </employee>
+
+</employees>
