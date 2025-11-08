@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops </title>
+</head>
+<body>
+    <h1>JavaScript Loop Examples</h1>
+
+    <h2>While Loop Example</h2>
+    <div id="whileLoopOutput"></div>
+
+    <h2>For Loop Example</h2>
+    <div id="forLoopOutput"></div>
+
+    <script>
+        let i = 0;
+        let whileOutput = "Numbers printed using While Loop: <br>";
+        while (i < 5) {
+            whileOutput += "Number: " + i + "<br>";
+            i++;
+        }
+        document.getElementById("whileLoopOutput").innerHTML = whileOutput;
+
+        let forOutput = "Numbers printed using For Loop: <br>";
+        for (let j = 8; j >0; j--) {
+            forOutput += "Number: " + j + "<br>";
+        }
+        document.getElementById("forLoopOutput").innerHTML = forOutput;
+    </script>
+</body>
+</html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements and functions</title>
+</head>
+<body>
+    <h1>Conditional Statements </h1>
+        <script>
+      let temperature = 25;
+      if (temperature > 30) {
+        document.write("Temperature is hot");
+      } else {
+        document.write("Temperature is moderate!");
+      }
+      </script>
+      <h2>Function Use</h2>
+      <script>
+      function greet(name) {
+        document.write("Hello, " + name + "!");
+      }
+      greet("SACHI"); 
+
+    </script>
+</body>
+</html>
